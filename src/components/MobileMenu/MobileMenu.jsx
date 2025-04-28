@@ -93,7 +93,7 @@ const Footer = styled.footer`
 `;
 
 const FooterLink = styled.a`
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;

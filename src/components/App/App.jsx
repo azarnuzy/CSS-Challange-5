@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from '../Header';
 import ShoeIndex from '../ShoeIndex';
+import "./index.css"
 
 const App = () => {
   const [sortId, setSortId] = React.useState('newest');

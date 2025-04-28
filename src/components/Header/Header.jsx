@@ -33,6 +33,11 @@ const Header = () => {
             <NavLink href="/women">Women</NavLink>
             <NavLink href="/kids">Kids</NavLink>
             <NavLink href="/collections">Collections</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
           </Nav>
           <Icons>
             <UnstyledButton>
@@ -64,13 +69,15 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
+  overflow-x: auto;
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
 
   @media ${QUERIES.tabletAndDown} {
     display: none;
@@ -88,11 +95,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 
