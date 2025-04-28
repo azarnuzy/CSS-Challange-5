@@ -7,6 +7,8 @@ import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton';
+import { Root, Trigger } from  '@radix-ui/react-dialog';
+import "./styles.css";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -19,36 +21,40 @@ const Header = () => {
   return (
     <header>
       <SuperHeader />
-      <MainHeader>
-        <Side>
-          <Logo />
-        </Side>
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
-        <Icons>
-          <UnstyledButton>
-            <Icon id="shopping-bag" strokeWidth={1} />
-          </UnstyledButton>
-          <UnstyledButton>
-            <Icon id="search" strokeWidth={1} />
-          </UnstyledButton>
-          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
-            <Icon id="menu" strokeWidth={1} />
-          </UnstyledButton>
-        </Icons>
-        {/* <Side /> */}
-      </MainHeader>
+      <Root>
+        <MainHeader>
+          <Side>
+            <Logo />
+          </Side>
+          <Nav>
+            <NavLink href="/sale">Sale</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
+          </Nav>
+          <Icons>
+            <UnstyledButton>
+              <Icon id="shopping-bag" strokeWidth={1} />
+            </UnstyledButton>
+            <UnstyledButton>
+              <Icon id="search" strokeWidth={1} />
+            </UnstyledButton>
+            <Trigger asChild>
+              <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+                <Icon id="menu" strokeWidth={1} />
+              </UnstyledButton>
+            </Trigger>
+          </Icons>
+          {/* <Side /> */}
+        </MainHeader>
 
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
+        <MobileMenu
+          isOpen={showMobileMenu}
+          onDismiss={() => setShowMobileMenu(false)}
+        />
+      </Root>
     </header>
   );
 };
